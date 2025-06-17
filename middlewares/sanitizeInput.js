@@ -15,5 +15,3 @@ module.exports.sanitizeInput = (req, res, next) => {
         next(error);
     }
 }
-
-module.exports = {sanitizeInput}

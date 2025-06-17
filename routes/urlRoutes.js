@@ -1,13 +1,15 @@
 const express = require ('express');
 const shortenUrlHandler = require('../service/urlService');
+const {getUrlByShortId, incrementCount} = require('../repository/urlRepository');
 const router = express.Router();
 
 router.post('/shorten', shortenUrlHandler);
 
-router.get('/:shortId', async(req, res, next) => {
+router.get('/:shortId', async(req, res) => {
     try
     {
-        const originalUrl = await redirectUrl(req.params.shortId);
+        const shortId = req.params.shortId;
+        const originalUrl = await getUrlByShortId(shortId);
         res.redirect(originalUrl);
     }
     catch (error)
