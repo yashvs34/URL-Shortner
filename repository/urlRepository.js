@@ -12,11 +12,29 @@ async function getUrlByShortId (shortId)
     return await Url.findOne({shortUrl: shortId});
 }
 
-async function incrementCount (urlDoc)
+async function incrementCount (shortId)
 {
-    urlDoc.clickCount++;
+    try
+    {
+        const updatedUrl = await Url.findOne({shortId});
 
-    return await urlDoc.save();
+        if (updatedUrl)
+        {
+            updatedUrl.clickCount++;
+            return await updatedUrl.save();
+        }
+
+        console.log("No url found");
+    }
+    catch (error)
+    {
+        console.log("Error in incrementing click count", error);
+    }
 }
 
-module.exports = {saveUrl, getUrlByShortId, incrementCount}
+async function findAlreadyPresent (url)
+{
+    return await Url.findOne({originalUrl : url});
+}
+
+module.exports = {saveUrl, getUrlByShortId, incrementCount, findAlreadyPresent}

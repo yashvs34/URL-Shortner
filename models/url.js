@@ -5,7 +5,10 @@ const urlSchema = new mongoose.Schema({
         type : String,
         unique : true
     },
-    originalUrl : String,
+    originalUrl : {
+        type : String,
+        unique : true
+    },
     createdAt : {
         type : Date,
         default : Date.now()

@@ -7,6 +7,7 @@ const { sanitizeInput } = require('./middlewares/sanitizeInput');
 const limiter = require('./middlewares/rateLimitter');
 const app = express();
 const PORT = process.env.PORT;
+
 app.use(express.json());
 app.use(sanitizeInput);
 app.use(limiter);

@@ -2,7 +2,7 @@ const express = require('express');
 const validate = require('../utils/requestValidator');
 const url = require('../models/url')
 const generateShortId = require('../utils/generateShortId');
-const urlRepo = require('../repository/urlRepository');
+const {saveUrl, findAlreadyPresent} = require('../repository/urlRepository');
 
 async function  shortenUrlHandler (req, res, next)
 {
@@ -12,17 +12,19 @@ async function  shortenUrlHandler (req, res, next)
 
     try
     {
-        const shortId = generateShortId();
-
-        const alreadyPresent = await urlRepo.getUrlByShortId(shortId);
-        console.log("Finded URL", alreadyPresent);
-
+        const alreadyPresent = await findAlreadyPresent(url);
+        
+        console.log("Found URL", alreadyPresent);
+        
         if (alreadyPresent)
         {
             res.send("Url is already shortened");
+            return;
         }
 
-        const savedUrl = await urlRepo.saveUrl(shortId, url);
+        const shortId = generateShortId();
+
+        const savedUrl = await saveUrl(shortId, url);
 
         console.log(`URL was converted successfully`);
 
