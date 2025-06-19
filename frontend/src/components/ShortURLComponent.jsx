@@ -5,15 +5,18 @@ function ShortURLComponent ({shortUrl, message})
     return (
         
         <div className="shorturl-container">
-            <div>
+            <div className="shorturl-alert">
                 {message}
             </div>
-            <div className="shorturl-text">
-                Shortened URL : 
-            </div>
 
-            <div className="shorturl">
-                {shortUrl}
+            <div className="url-container">
+                <div className="shorturl-text">
+                    Short URL:  
+                </div>
+
+                <div className="shorturl">
+                    {shortUrl}
+                </div>
             </div>
         </div>
     )

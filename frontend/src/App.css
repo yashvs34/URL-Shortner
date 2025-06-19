@@ -24,8 +24,7 @@
 .detail-container
 {
     height: 350px;
-    width: 600px;
-    /* border: 2px solid black; */
+    width: 800px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -63,6 +62,25 @@
 
 .shorturl-container
 {
+    margin-top: -200px;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.shorturl-alert
+{
+    color: red;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.url-container
+{
     display: flex;
-    justify-content: center;
+
+}
+
+.shorturl
+{
+    color: blue;
 }
