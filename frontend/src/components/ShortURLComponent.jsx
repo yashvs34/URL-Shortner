@@ -1,9 +1,13 @@
 
 
-function ShortURLComponent ({shortUrl})
+function ShortURLComponent ({shortUrl, message})
 {
     return (
+        
         <div className="shorturl-container">
+            <div>
+                {message}
+            </div>
             <div className="shorturl-text">
                 Shortened URL : 
             </div>
