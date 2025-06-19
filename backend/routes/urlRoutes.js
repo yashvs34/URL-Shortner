@@ -10,7 +10,7 @@ router.get('/:shortId', async(req, res) => {
     {
         const shortId = req.params.shortId;
         const originalUrl = await getUrlByShortId(shortId);
-        res.redirect(originalUrl);
+        res.redirect(originalUrl.originalUrl);
     }
     catch (error)
     {
