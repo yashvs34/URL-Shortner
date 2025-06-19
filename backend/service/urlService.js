@@ -20,7 +20,7 @@ async function  shortenUrlHandler (req, res, next)
         {
             res.json({
                 message : "URL is already shortened",
-                shortUrl : alreadyPresent.shortId
+                shortUrl : alreadyPresent.shortUrl
             });
             return;
         }
