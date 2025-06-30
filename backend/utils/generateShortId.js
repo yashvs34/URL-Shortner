@@ -26,6 +26,8 @@ function generateShortId ()
             shortId += `${String.fromCharCode(97 + Math.floor(100 * Math.random()) % 26)}`;
             count1--;
         }
+
+        i++;
     }
 
     return shortId;
