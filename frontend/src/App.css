@@ -74,6 +74,13 @@
     font-size: 30px;
 }
 
+.tooManyRequests
+{
+    font: 400;
+    color: red;
+    font-weight: bold;
+    margin: -150px;
+}
 .url-container
 {
     display: flex;

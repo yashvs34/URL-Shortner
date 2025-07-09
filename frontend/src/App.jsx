@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import './App.css'
 import ShortURLComponent from './components/ShortURLComponent';
+import TooManyRequests from './components/TooManyRequests';
 
 function App ()
 {
@@ -9,7 +10,7 @@ function App ()
   const [response, setResponse] = useState();
 
   useEffect((() => {
-    axios.get('https://url-shortner-s1t7.onrender.com/');
+    axios.get('http://13.60.49.255:8081');
   }), []);
 
   return (
@@ -23,23 +24,26 @@ function App ()
           setUrl(event.target.value);
         }}/>
 
-        <div className='button' onClick={() => {
+        <div className='button' onClick={async () => {
           console.log(url.length);
           console.log(typeof url);
-          axios.post('https://url-shortner-s1t7.onrender.com/shorten', {
-            url : url
-          })
-          .then((response) => {
-            console.log(response);
-            setResponse(response);
-          });
+          try
+          {
+            const response1 = await axios.post('http://13.60.49.255:8081/shorten', { url : url });
+            setResponse(response1);
+          }
+          catch (error)
+          {
+            setResponse(error.response);
+          }
+
         }}>
           Shorten URL
         </div>
       </div>
       
         <div>
-          {response ? <ShortURLComponent shortUrl={response.data.shortUrl} message={response.data.message} /> : <></>}
+          {response ? ((response.status === 429) ? <TooManyRequests/> : <ShortURLComponent shortUrl={response.data.shortUrl} message={response.data.message} />) : <></>}
         </div>
     </div>
   )

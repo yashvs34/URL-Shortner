@@ -11,7 +11,7 @@ function ShortURLComponent ({shortUrl, message})
 
             <div className="url-container">
                 <div className="shorturl-text">
-                    Short URL:  
+                    Short URL :  
                 </div>
 
                 <div className="shorturl">
