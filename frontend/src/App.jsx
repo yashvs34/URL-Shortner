@@ -10,7 +10,7 @@ function App ()
   const [response, setResponse] = useState();
 
   useEffect((() => {
-    axios.get('http://13.60.49.255:8081');
+    axios.get('https://url-shortner-backend.yashvs34.me');
   }), []);
 
   return (
@@ -29,7 +29,7 @@ function App ()
           console.log(typeof url);
           try
           {
-            const response1 = await axios.post('http://13.60.49.255:8081/shorten', { url : url });
+            const response1 = await axios.post('https://url-shortner-backend.yashvs34.me/shorten', { url : url });
             setResponse(response1);
           }
           catch (error)
