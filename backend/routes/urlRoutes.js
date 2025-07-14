@@ -23,7 +23,7 @@ router.get('/:shortId', async(req, res) => {
             })
         }
 
-        next(error);
+        return res.send("Some error occurred");
     }
 });
 
