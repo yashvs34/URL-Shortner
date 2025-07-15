@@ -31,8 +31,10 @@ URL-Shortner app to shorten very long urls, best for sending and increasing chan
 **Deployment**
 - AWS EC2
 - NGINX
-- Certbot
 - .me Domain from Namecheap
+
+**SSL Certificate**
+- Certbot
 
 ## 🏗️ ARCHITECTURE OVERVIEW
 <img width="831" height="263" alt="image" src="https://github.com/user-attachments/assets/14d2aff5-875d-4df4-b480-561d605f869b" />
