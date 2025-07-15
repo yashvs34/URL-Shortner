@@ -35,14 +35,14 @@
 - .me Domain from Namecheap
 
 ## 🏗️ ARCHITECTURE OVERVIEW
-<img width="965" height="304" alt="image" src="https://github.com/user-attachments/assets/45aa3b53-18cc-422e-bb65-05524205cce6" />    
-
-<img width="1149" height="603" alt="image" src="https://github.com/user-attachments/assets/07b05c30-6b89-4a7e-a9de-9e26cda94068" />
+<img width="831" height="263" alt="image" src="https://github.com/user-attachments/assets/14d2aff5-875d-4df4-b480-561d605f869b" />
+     
+<img width="1370" height="736" alt="image" src="https://github.com/user-attachments/assets/209f4358-0ee8-44ce-a7ed-a9f577666bea" />
 
 
 ## 🧑‍💻 LOCAL INSTALLATION & SETUP
 > ⚠️ Make sure to set up the `.env` file.  
-> .env file must contain **MONGODB_URI** and **PORT**
+> .env file must contain **MONGODB_URI** and **PORT**  
 > Kindly note : If you want to run on your own backend, then you will have to change the api calls in frontend to your custom api
 ```bash
 cd backend        # Move to backend folder
