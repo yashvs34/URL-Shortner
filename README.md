@@ -1,5 +1,5 @@
-## WEBSITE
-[DEPLOYMENT LINK](https://url-shortner.yashvs34.me/)  
+## INTRODUCTION
+URL-Shortner app to shorten very long urls, best for sending and increasing chances of retention in mind
 
 
 ## ✨ FEATURES
