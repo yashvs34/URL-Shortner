@@ -25,8 +25,6 @@ function App ()
         }}/>
 
         <div className='button' onClick={async () => {
-          console.log(url.length);
-          console.log(typeof url);
           try
           {
             const response1 = await axios.post('https://url-shortner-backend.yashvs34.me/shorten', { url : url });
