@@ -72,6 +72,8 @@
     color: red;
     font-weight: 700;
     font-size: 30px;
+    display: flex;
+    justify-content: center;
 }
 
 .tooManyRequests
@@ -90,4 +92,6 @@
 .shorturl
 {
     color: blue;
+    cursor: pointer;
+    text-decoration: underline;
 }

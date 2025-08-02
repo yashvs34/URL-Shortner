@@ -14,7 +14,9 @@ function ShortURLComponent ({shortUrl, message})
                     Short URL :  
                 </div>
 
-                <div className="shorturl">
+                <div className="shorturl" onClick={() => {
+                    window.open(shortUrl, "_blank", "noopener,noreferrer");
+                }}>
                     {shortUrl}
                 </div>
             </div>
