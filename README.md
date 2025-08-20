@@ -68,6 +68,6 @@ npm run dev       # Start frontend on port 5173 (https://localhost:5173)
 ## 🔮 FUTURE SCOPES
 - Using Redis for caching for improving response time
 - Checking if the user is inputing random text or actual url
-- Making shortned url which is shown to user clickable
 - Return number of clicks to the shortned url
 - Implementing signin and signup feature for more security
+
